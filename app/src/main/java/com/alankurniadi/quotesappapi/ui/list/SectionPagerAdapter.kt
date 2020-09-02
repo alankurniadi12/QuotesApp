@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.alankurniadi.quotesappapi.R
+import com.alankurniadi.quotesappapi.ui.list.bosnia.ListBosFragment
 import com.alankurniadi.quotesappapi.ui.list.english.ListEnFragment
 
 class SectionPagerAdapter(private val mContext: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
@@ -21,7 +22,7 @@ class SectionPagerAdapter(private val mContext: Context, fm: FragmentManager) : 
         var fragment: Fragment? = null
         when(position){
             0 -> fragment = ListEnFragment()
-            1 -> fragment = List_Sr_Fragment()
+            1 -> fragment = ListBosFragment()
         }
         return fragment as Fragment
     }

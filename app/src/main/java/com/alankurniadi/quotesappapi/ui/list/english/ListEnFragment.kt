@@ -1,17 +1,15 @@
 package com.alankurniadi.quotesappapi.ui.list.english
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alankurniadi.quotesappapi.R
 import kotlinx.android.synthetic.main.fragment_list__en_.*
-import kotlinx.android.synthetic.main.item_quotes.*
 
 
 class ListEnFragment : Fragment() {
@@ -35,7 +33,6 @@ class ListEnFragment : Fragment() {
         progress_en.visibility = View.VISIBLE
         listEngViewModel.setListEngQuotes()
         listEngViewModel.data.observe(viewLifecycleOwner, Observer {
-            Log.e("ListEnFragment", "Data: $it")
             if (it != null) {
                 progress_en.visibility = View.GONE
                 engAdapter.setData(it)

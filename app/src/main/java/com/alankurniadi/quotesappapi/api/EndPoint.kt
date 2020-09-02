@@ -1,5 +1,6 @@
 package com.alankurniadi.quotesappapi.api
 
+import com.alankurniadi.quotesappapi.model.ListBosnia
 import com.alankurniadi.quotesappapi.model.ListEnglish
 import com.alankurniadi.quotesappapi.model.Random
 import retrofit2.Call
@@ -14,4 +15,8 @@ interface EndPoint {
     //English Quotes
     @GET("quotes/lang/en")
     fun getEnglishQuotes(): Call<List<ListEnglish>>
+
+    //Bosnia Quotes
+    @GET("quotes/lang/sr")
+    fun getBosListQuotes(): Call<List<ListBosnia>>
 }
