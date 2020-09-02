@@ -32,6 +32,7 @@ class HomeFragment : Fragment() {
             if (it != null) {
                 progress_random.visibility = View.GONE
                 tv_quotes_main.text = it.en
+                tv_author_main.text = it.author
             }else {
                 progress_random.visibility = View.GONE
                 tv_quotes_main.text = resources.getString(R.string.data_kosong)
