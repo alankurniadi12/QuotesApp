@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view)
 
         appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.nav_home, R.id.nav_list)
-            .setDrawerLayout(drawerLayout)
+            R.id.nav_home, R.id.nav_list_quotes)
+            .setOpenableLayout(drawerLayout)
             .build()
 
         val navController = findNavController(R.id.nav_host_fragment)

@@ -8,10 +8,16 @@
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
 
+    //Menu Drawer
     <string name="menu_home">Home</string>
+    <string name="menu_all_list">All Quotes</string>
+
+    //TAB
+    <string name="tab_english">English</string>
+    <string name="tab_bosnia">Bosnia</string>
+
     <string name="double_quote">,,</string>
     <string name="title_home">Quotes</string>
     <string name="author">author</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -8,12 +8,13 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.alankurniadi.quotesappapi.ui.home.HomeFragment"
-        android:label="menu_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home"/>
-    <fragment
-        android:id="@+id/nav_list"
-        android:name="com.alankurniadi.quotesappapi.ui.list.ListFragment"
-        android:label="List Quotes"
-        tools:layout="@layout/fragment_list"/>
+
+    <activity
+        android:id="@+id/nav_list_quotes"
+        android:name="com.alankurniadi.quotesappapi.ui.list.QuotesActivity"
+        android:label="All Quotes"
+        tools:layout="@layout/activity_quotes"/>
 
 </navigation>
