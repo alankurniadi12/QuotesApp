@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alankurniadi.quotesappapi.R
+import com.alankurniadi.quotesappapi.model.ListEnglish
+import com.alankurniadi.quotesappapi.ui.detail.DetailEngFragment
+import com.alankurniadi.quotesappapi.ui.detail.DetailFragment
 import kotlinx.android.synthetic.main.fragment_list__en_.*
 
 
@@ -36,11 +39,32 @@ class ListEnFragment : Fragment() {
             if (it != null) {
                 progress_en.visibility = View.GONE
                 engAdapter.setData(it)
-                rv_eng.layoutManager = LinearLayoutManager(context)
-                rv_eng.adapter = engAdapter
+
+                showRecyclerView()
+            }
+        })
+
+    }
+
+    private fun showRecyclerView() {
+        rv_eng.layoutManager = LinearLayoutManager(context)
+        rv_eng.adapter = engAdapter
+
+        engAdapter.setOnItemClickCallback(object : EngAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: ListEnglish) {
+                val mDetailFragment = DetailEngFragment()
+                val bundle = Bundle()
+                bundle.putString(DetailEngFragment.EXTRA_ID_ENG, data.id)
+                mDetailFragment.arguments = bundle
+
+                val mFragmentManager = fragmentManager
+                mFragmentManager?.beginTransaction()?.apply {
+                    replace(R.id.frame_container, mDetailFragment, DetailEngFragment::class.java.simpleName)
+                    addToBackStack(null)
+                    commit()
+                }
             }
 
         })
-
     }
 }

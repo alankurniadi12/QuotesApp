@@ -6,9 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alankurniadi.quotesappapi.R
 import com.alankurniadi.quotesappapi.model.ListBosnia
+import com.alankurniadi.quotesappapi.model.ListEnglish
 import kotlinx.android.synthetic.main.item_quotes.view.*
 
 class BosAdapter: RecyclerView.Adapter<BosAdapter.BosViewHolder>() {
+
+    private var onItemClickCallback: OnIItemClickCallback? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnIItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     private val data = ArrayList<ListBosnia>()
 
@@ -34,7 +41,13 @@ class BosAdapter: RecyclerView.Adapter<BosAdapter.BosViewHolder>() {
             with(itemView) {
                 tv_quotes_item.text = bosQuotes.sr
                 tv_author_item.text = bosQuotes.author
+
+                itemView.setOnClickListener { onItemClickCallback?.onItemClicked(bosQuotes) }
             }
         }
+    }
+
+    interface OnIItemClickCallback {
+        fun onItemClicked(data: ListBosnia)
     }
 }

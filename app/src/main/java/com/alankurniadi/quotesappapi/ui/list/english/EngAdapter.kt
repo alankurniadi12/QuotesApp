@@ -1,6 +1,5 @@
 package com.alankurniadi.quotesappapi.ui.list.english
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,12 @@ import com.alankurniadi.quotesappapi.model.ListEnglish
 import kotlinx.android.synthetic.main.item_quotes.view.*
 
 class EngAdapter: RecyclerView.Adapter<EngAdapter.EngViewHolder>() {
+
+    private var onItemClickCallback: OnItemClickCallback? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     private val data = ArrayList<ListEnglish>()
 
@@ -35,7 +40,13 @@ class EngAdapter: RecyclerView.Adapter<EngAdapter.EngViewHolder>() {
             with(itemView) {
                 tv_quotes_item.text = engQuotes.en
                 tv_author_item.text = engQuotes.author
+
+                itemView.setOnClickListener { onItemClickCallback?.onItemClicked(engQuotes) }
             }
         }
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: ListEnglish)
     }
 }
