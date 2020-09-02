@@ -1,4 +1,4 @@
-package com.alankurniadi.quotesappapi.ui
+package com.alankurniadi.quotesappapi.ui.home
 
 import android.content.Context
 import android.util.Log
@@ -11,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel: ViewModel() {
+class HomeViewModel: ViewModel() {
     val data = MutableLiveData<Random>()
 
     fun setQuotesRandom() {

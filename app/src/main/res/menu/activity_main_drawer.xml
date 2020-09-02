@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="menu_gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="menu_slideshow" />
+        <item
+            android:id="@+id/nav_chart"
+            android:icon="@drawable/shopping_cart"
+            android:title="menu_cart"/>
+    </group>
+    <item android:title="@string/app_name">
+        <menu>
+            <item
+                android:id="@+id/nav_map"
+                android:checkable="true"
+                android:icon="@drawable/map_black"
+                android:title="menu_map"/>
+            <item
+                android:id="@+id/nav_hotel"
+                android:checkable="true"
+                android:icon="@drawable/hotel_black"
+                android:title="menu_hotel"/>
+            <item
+                android:checkable="true"
+                android:id="@+id/nav_subway"
+                android:icon="@drawable/subway_black"
+                android:title="menu_subway"/>
+        </menu>
+    </item>
+</menu>

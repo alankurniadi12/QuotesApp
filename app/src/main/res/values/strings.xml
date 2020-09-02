@@ -3,4 +3,11 @@
     <string name="dummy_text_long">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </string>
+    <string name="data_kosong">null</string>
+
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+    <string name="menu_home">Home</string>
+    <string name="double_quote">,,</string>
 </resources>
